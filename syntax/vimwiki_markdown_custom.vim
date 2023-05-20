@@ -178,7 +178,8 @@ syntax match VimwikiTableRow /^\s*|.\+|\s*$/
                            \ VimwikiSubScriptT,
                            \ VimwikiCodeT,
                            \ VimwikiEqInT,
-                           \ @Spell
+                           \ @Spell,
+                           \ JiraCaseId
 
 " TODO fix behavior within lists https://github.github.com/gfm/#list-items
 " indented code blocks https://github.github.com/gfm/#indented-code-blocks
@@ -194,3 +195,5 @@ hi def link VimwikiWeblink1T VimwikiLink
 hi def link VimwikiWikiLink1 VimwikiLink
 hi def link VimwikiWikiLink1T VimwikiLink
 
+syn match JiraCaseId /[a-zA-Z]\{2,}[1-9]\?\([a-zA-Z]\{2,}\)\?-[0-9]\{3,}/
+hi JiraCaseId gui=bold guifg=#7dcc7d
