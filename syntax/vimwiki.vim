@@ -258,7 +258,8 @@ syntax match VimwikiTableRow /^\s*|.\+|\s*$/
                            \ VimwikiEqInT,
                            \ VimwikiEmoji,
                            \ @Spell,
-                           \ JiraCaseId
+                           \ JiraCaseId,
+                           \ FeishuCaseId
 
 syntax match VimwikiCellSeparator /\%(|\)\|\%(-\@<=+\-\@=\)\|\%([|+]\@<=-\+\)/ contained
 
@@ -570,7 +571,9 @@ if and(vimwiki#vars#get_global('emoji_enable'), 1) != 0 && has('conceal')
   exe 'syn iskeyword '.&iskeyword.',-,:'
 endif
 
-syn match JiraCaseId /[a-zA-Z]\{2,}[1-9]\?\([a-zA-Z]\{2,}\)\?-[0-9]\{3,}/
+syn match FeishuCaseId /[Ff]-\d\{10}/
 hi JiraCaseId gui=bold guifg=#7dcc7d
+syn match JiraCaseId /[a-zA-Z]\{2,}[1-9]\?\([a-zA-Z]\{2,}\)\?-[0-9]\{3,}/
+hi FeishuCaseId gui=bold guifg=#7dcc7d
 
 syntax spell toplevel
